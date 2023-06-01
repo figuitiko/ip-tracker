@@ -30,6 +30,6 @@ module.exports = {
     'eslint-disable-next-line react/react-in-jsx-scope': 'off',   
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    "@typescript-eslint/no-misused-promises": "off"    
+    "@typescript-eslint/no-misused-promises": "off",        
   }
 }

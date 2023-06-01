@@ -67,11 +67,13 @@ export const getStateAcronym = (state: string) => {
   }
 }
 
-export const fetcherData = async (url: string) => {
+export const fetchData = async (url: string) => {
   try {
     const rsp = await axios.get(url)
-    if (rsp.data.status === 'fail') return [rsp.data, null]
-    return [null, rsp.data]
+    if (rsp.status === 200) {
+      return [null, rsp.data]
+    }
+    return [rsp.data, null]
   } catch (error) {
     return [error, null]
   }

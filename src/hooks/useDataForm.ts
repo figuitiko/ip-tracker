@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import { type ICoordinates, type ILocation, type IpContextType } from '../types'
 import IpContext from '../context/IpContext'
-import { fetcherData } from '../util'
+import { fetchData } from '../util'
 const baseApiUrl = import.meta.env.VITE_GEO_API_BASE_URL as string
 const apiKey = import.meta.env.VITE_API_GEO_IP_API as string
 
@@ -19,7 +19,7 @@ export const useDataForm = () => {
   }
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const [err, data] = await fetcherData(`${baseApiUrl}?apiKey=${apiKey}&ipAddress=${ipAddress}`)
+    const [err, data] = await fetchData(`${baseApiUrl}?apiKey=${apiKey}&ipAddress=${ipAddress}`)
     if (err !== null) {
       setIsValid(true)
       setTimeout(() => {
