@@ -6,7 +6,7 @@ import IpContext from '../context/IpContext'
 import { type IpContextType } from '../types'
 // Define a custom icon for the marker
 const customIcon = new Icon({
-  iconUrl: 'src/assets/images/icon-location.svg',
+  iconUrl: 'src/assets/images/icon-location-ok.svg',
   iconSize: [46, 56],
   iconAnchor: [12, 41]
 })
