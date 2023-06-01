@@ -4,9 +4,10 @@ import 'leaflet/dist/leaflet.css'
 import { useContext } from 'react'
 import IpContext from '../context/IpContext'
 import { type IpContextType } from '../types'
+import locationIcon from '../assets/images/icon-location-ok.svg'
 // Define a custom icon for the marker
 const customIcon = new Icon({
-  iconUrl: 'src/assets/images/icon-location-ok.svg',
+  iconUrl: locationIcon,
   iconSize: [46, 56],
   iconAnchor: [12, 41]
 })
