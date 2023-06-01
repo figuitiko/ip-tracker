@@ -4,5 +4,6 @@ import eslint from 'vite-plugin-eslint'
 
 // https://vitejs.dev/config/
 export default defineConfig({    
+  base: "/ip-tracker/",
   plugins: [react(), eslint({ include: './src/**/*.ts' })],
 })

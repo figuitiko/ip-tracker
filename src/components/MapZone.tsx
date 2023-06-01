@@ -37,7 +37,9 @@ const MapZone = () => {
   return (
     <div className='z-[1] relative flex flex-col w-[375px] md:w-[1440px] h-[800px]  overflow-hidden'>
       <MapContainer center={[lat, lng]} zoom={13} scrollWheelZoom={false} id='map'>
-        <MyComponent />
+        {
+          lat !== 0 && lng !== 0 ? <MyComponent /> : null
+        }
       </MapContainer>
     </div>
   )
