@@ -1,8 +1,8 @@
+import Loader from '../components/Loader'
 import type { ICoordinates, ILocation, IpContextType } from '../types'
 import { fetchData } from '../util'
 import IpContext from './IpContext'
 import { useEffect, useState } from 'react'
-import LoadingOverlay from 'react-loading-overlay'
 const baseApiUrl = import.meta.env.VITE_GEO_API_BASE_URL as string
 const apiKey = import.meta.env.VITE_API_GEO_IP_API as string
 const IpContextProvider = ({ children }: { children: React.ReactNode }) => {
@@ -71,15 +71,11 @@ const IpContextProvider = ({ children }: { children: React.ReactNode }) => {
     setCoordinates
   }
   return (
-    <LoadingOverlay
-      active={isActive}
-      spinner
-      text='Loading your content...'
-    >
-    <IpContext.Provider value={initValue}>
-      {children}
-    </IpContext.Provider>
-  </LoadingOverlay>
+    <Loader isActivated={isActive} textContent='your content is been loaded'>
+      <IpContext.Provider value={initValue}>
+        {children}
+      </IpContext.Provider>
+    </Loader>
   )
 }
 
